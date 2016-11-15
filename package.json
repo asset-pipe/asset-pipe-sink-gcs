@@ -1,0 +1,42 @@
+{
+  "name": "asset-pipe-sink-gcs",
+  "version": "1.0.0-alpha.1",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Module for writing and reading asset feeds and js/css bundles to and from Google Cloud Storage",
+  "main": "./lib/sink.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asset-pipe/asset-pipe-sink-gcs.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "6.x"
+  },
+  "bugs": {
+    "url": "https://github.com/asset-pipe/asset-pipe-sink-gcs/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/storage": "0.4.0",
+    "readable-stream": "2.2.2",
+    "lodash.isobject": "3.0.2",
+    "lodash.isstring": "4.0.1"
+  },
+  "devDependencies": {
+    "tap": "8.0.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  }
+}
