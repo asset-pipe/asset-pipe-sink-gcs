@@ -34,7 +34,7 @@
     "lodash.isstring": "4.0.1"
   },
   "devDependencies": {
-    "tap": "10.3.0"
+    "tap": "10.3.1"
   },
   "scripts": {
     "test": "tap test/*.js"
