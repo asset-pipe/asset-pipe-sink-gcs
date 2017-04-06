@@ -1,6 +1,6 @@
 {
   "name": "asset-pipe-sink-gcs",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "author": {
     "name": "Trygve Lie",
     "email": "post@trygve-lie.com"
@@ -40,5 +40,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "tap test/*.js"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
