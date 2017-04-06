@@ -31,6 +31,9 @@ const sink = new Sink({
     projectId: 'myProject',
     keyFilename: './myGcsKey-v35837568325.json'
 }, 'myAssetBucket');
+sink.on('storage info', (msg, metaObj) => {
+    console.log(msg, metaObj);
+});
 
 app.get('/', (req, res, next) => {
     const file = sink.reader('feed.json');
@@ -52,12 +55,17 @@ app.listen(8000);
 
 This module have the following API:
 
-### constructor(options, bucket)
+### constructor(options, bucket, metadata)
 
 Supported arguments are:
 
  - `options` - Object - A Google Cloud Storage [auth object][gcs-auth] - Required.
  - `bucket` - String - Name of the bucket in Google Cloud Storage to write and read files to/from - Required.
+ - `metadata` - Object - A bucket [metadata object][gcs-bucket-meta] - Optional.
+
+Events:
+
+ - `storage info` - General info on the underlaying storage. Emits with: `message` and `metaObject`.
 
 
 ### writer(type)
@@ -118,5 +126,6 @@ THE SOFTWARE.
 
 [asset-pipe]: https://github.com/asset-pipe
 [asset-pipe-build-server]: https://github.com/asset-pipe/asset-pipe-build-server
+[gcs-bucket-meta]: https://googlecloudplatform.github.io/google-cloud-node/#/docs/google-cloud/0.50.0/storage?method=createBucket
 [gcs-auth]: https://googlecloudplatform.github.io/google-cloud-node/#/docs/google-cloud/0.50.0/google-cloud
 [gcs]: https://cloud.google.com/storage/
