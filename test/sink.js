@@ -16,7 +16,7 @@ tap.test('constructor() - no value for "bucket" argument - should throw', (t) =>
     t.throws(() => {
         new Sink({ // eslint-disable-line
             projectId: 'asset-pipe',
-            keyFilename: './asset-pipe-a24234.json',
+            keyFilename: './foo.json',
         });
     }, new Error('"bucket" string must be provided'));
     t.end();
@@ -25,7 +25,7 @@ tap.test('constructor() - no value for "bucket" argument - should throw', (t) =>
 tap.test('constructor() - has value for "options" and "bucket" arguments - should be of Sink Class type', (t) => {
     t.type(new Sink({ // eslint-disable-line
         projectId: 'asset-pipe',
-        keyFilename: './asset-pipe-a24234.json',
+        keyFilename: './foo.json',
     }, 'asset-bucket'), Sink);
     t.end();
 });
