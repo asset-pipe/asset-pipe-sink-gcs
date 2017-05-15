@@ -1,5 +1,7 @@
 # asset-pipe-sink-gcs
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/asset-pipe/asset-pipe-sink-gcs.svg)](https://greenkeeper.io/)
+
 A [asset-pipe][asset-pipe] sink for writing to and reading from [Google Cloud Storage][gcs].
 
 The intention of the [asset-pipe][asset-pipe] sink modules is to use be able to write and read files

@@ -25,7 +25,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/storage": "1.1.0",
+    "@google-cloud/storage": "1.1.1",
     "asset-pipe-common": "1.0.0-beta.5",
     "readable-stream": "2.2.9",
     "lodash.isstring": "4.0.1",
