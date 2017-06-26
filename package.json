@@ -1,6 +1,6 @@
 {
   "name": "asset-pipe-sink-gcs",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "author": {
     "name": "Trygve Lie",
     "email": "post@trygve-lie.com"
@@ -33,9 +33,9 @@
     "JSONStream": "1.3.1"
   },
   "devDependencies": {
-    "eslint": "^4.0.0",
+    "eslint": "^3.12.2",
     "eslint-config-finn": "^1.0.1",
-    "tap": "10.5.2"
+    "tap": "10.7.0"
   },
   "scripts": {
     "lint": "eslint .",
