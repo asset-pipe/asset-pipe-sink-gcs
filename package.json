@@ -35,7 +35,7 @@
   "devDependencies": {
     "eslint": "^4.0.0",
     "eslint-config-finn": "^1.0.1",
-    "tap": "10.3.4"
+    "tap": "10.5.2"
   },
   "scripts": {
     "lint": "eslint .",
