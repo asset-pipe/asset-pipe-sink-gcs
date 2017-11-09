@@ -52,6 +52,9 @@
   "files": [
     "lib"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "jest": {
     "testEnvironment": "node",
     "clearMocks": true,
@@ -71,7 +74,8 @@
     ],
     "{package.json,README.md,LICENSE.md}": [
       "projectz compile",
-      "git add"
+      "git add",
+      "prettier --write"
     ]
   },
   "config": {
