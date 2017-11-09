@@ -4,15 +4,17 @@
 const Sink = require('../');
 const tap = require('tap');
 
-
-tap.test('constructor() - no value for "options" argument - should throw', (t) => {
-    t.throws(() => {
+tap.test(
+    'constructor() - no value for "options" argument - should throw',
+    t => {
+        t.throws(() => {
         new Sink(); // eslint-disable-line
-    }, new Error('"options" object must be provided'));
-    t.end();
-});
+        }, new Error('"options" object must be provided'));
+        t.end();
+    }
+);
 
-tap.test('constructor() - no value for "bucket" argument - should throw', (t) => {
+tap.test('constructor() - no value for "bucket" argument - should throw', t => {
     t.throws(() => {
         new Sink({ // eslint-disable-line
             projectId: 'asset-pipe',
@@ -22,13 +24,20 @@ tap.test('constructor() - no value for "bucket" argument - should throw', (t) =>
     t.end();
 });
 
-tap.test('constructor() - has value for "options" and "bucket" arguments - should be of Sink Class type', (t) => {
+tap.test(
+    'constructor() - has value for "options" and "bucket" arguments - should be of Sink Class type',
+    t => {
     t.type(new Sink({ // eslint-disable-line
-        projectId: 'asset-pipe',
-        keyFilename: './foo.json',
-    }, 'asset-bucket'), Sink);
-    t.end();
-});
+                    projectId: 'asset-pipe',
+                    keyFilename: './foo.json',
+                },
+                'asset-bucket'
+            ),
+            Sink
+        );
+        t.end();
+    }
+);
 
 /*
 tap.test('.writer() - no value for "type" argument - should throw', (t) => {
