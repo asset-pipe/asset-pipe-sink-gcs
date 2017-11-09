@@ -73,9 +73,9 @@
       "git add"
     ],
     "{package.json,README.md,LICENSE.md}": [
+      "prettier --write",
       "projectz compile",
-      "git add",
-      "prettier --write"
+      "git add"
     ]
   },
   "config": {
