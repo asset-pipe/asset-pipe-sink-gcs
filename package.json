@@ -1,6 +1,6 @@
 {
-  "name": "asset-pipe-sink-gcs",
-  "version": "1.0.0-beta.11",
+  "name": "@asset-pipe/sink-gcs",
+  "version": "0.0.0-development",
   "author": "Trygve Lie <post@trygve-lie.com>",
   "description": "Module for writing and reading asset feeds and js/css bundles to and from Google Cloud Storage",
   "main": "./lib/sink.js",
@@ -15,7 +15,8 @@
     "Trygve Lie <post@trygve-lie.com>",
     "Trygve Lie (http://www.trygve-lie.com/)",
     "Greenkeeper (http://greenkeeper.io/)",
-    "Simen Bekkhus (https://github.com/SimenB)"
+    "Simen Bekkhus (https://github.com/SimenB)",
+    "Sveinung Røsaker (https://github.com/sveisvei)"
   ],
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-gcs/issues"
@@ -73,7 +74,6 @@
       "git add"
     ],
     "{package.json,README.md,LICENSE.md}": [
-      "prettier --write",
       "projectz compile",
       "git add"
     ]
