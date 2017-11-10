@@ -1,6 +1,6 @@
 {
   "name": "@asset-pipe/sink-gcs",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "author": "Trygve Lie <post@trygve-lie.com>",
   "description": "Module for writing and reading asset feeds and js/css bundles to and from Google Cloud Storage",
   "main": "./lib/sink.js",
