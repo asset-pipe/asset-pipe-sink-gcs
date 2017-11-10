@@ -1,6 +1,6 @@
 <!-- TITLE/ -->
 
-<h1>asset-pipe-sink-gcs</h1>
+<h1>@asset-pipe/sink-gcs</h1>
 
 <!-- /TITLE -->
 
@@ -8,7 +8,7 @@
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/asset-pipe/asset-pipe-sink-gcs" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/asset-pipe/asset-pipe-sink-gcs/master.svg" alt="Travis CI Build Status" /></a></span>
-<span class="badge-npmversion"><a href="https://npmjs.org/package/asset-pipe-sink-gcs" title="View this project on NPM"><img src="https://img.shields.io/npm/v/asset-pipe-sink-gcs.svg" alt="NPM version" /></a></span>
+<span class="badge-npmversion"><a href="https://npmjs.org/package/@asset-pipe/sink-gcs" title="View this project on NPM"><img src="https://img.shields.io/npm/v/@asset-pipe/sink-gcs.svg" alt="NPM version" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/asset-pipe/asset-pipe-sink-gcs" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/asset-pipe/asset-pipe-sink-gcs.svg" alt="Dependency Status" /></a></span>
 <span class="badge-daviddmdev"><a href="https://david-dm.org/asset-pipe/asset-pipe-sink-gcs#info=devDependencies" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/asset-pipe/asset-pipe-sink-gcs.svg" alt="Dev Dependency Status" /></a></span>
 
@@ -31,7 +31,7 @@ These sinks are normally used by the
 ## Installation
 
 ```bash
-$ npm install asset-pipe-sink-gcs
+$ npm install @asset-pipe/sink-gcs
 ```
 
 ## Example
@@ -40,7 +40,7 @@ Read an asset feed from [Google Cloud Storage][gcs] and serve it on http:
 
 ```js
 const express = require("express");
-const Sink = require("asset-pipe-sink-gcs");
+const Sink = require("@asset-pipe/sink-gcs");
 
 const app = express();
 const sink = new Sink(
