@@ -4,8 +4,13 @@ module.exports = () => {
     let state = {};
 
     const getBucket = () => ({
-        file() {
+        async getFiles({ prefix }) {
+            return state.getFiles && state.getFiles[prefix];
+        },
+
+        file(fileName) {
             return {
+                name: fileName,
                 createWriteStream() {
                     return state.createWriteStream;
                 },
@@ -13,7 +18,7 @@ module.exports = () => {
                     return state.save;
                 },
                 async download() {
-                    return state.download;
+                    return state.download && state.download[fileName];
                 },
                 async exists() {
                     return state.exists;

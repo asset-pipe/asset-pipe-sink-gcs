@@ -3,3 +3,61 @@
 exports[`.writer() - happy path 1`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c"`;
 
 exports[`.writer() - happy path 2`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c.json"`;
+
+exports[`dir() - should error when invalid response from getFiles 1`] = `[Error: Missing folder with name "/" or empty result]`;
+
+exports[`dir() - should error when no files 1`] = `[Error: Missing folder with name "/some-dir" or empty result]`;
+
+exports[`dir() - should error when no matching files 1`] = `[Error: Missing folder with name "/folder" or empty result]`;
+
+exports[`dir() - should output 1 file 1`] = `
+Array [
+  Object {
+    "content": "file-content",
+    "fileName": "some-path/some-file-name.json",
+  },
+]
+`;
+
+exports[`dir() - should output 1 file with extra slash 1`] = `
+Array [
+  Object {
+    "content": "file-content",
+    "fileName": "some-path/some-file-name.json",
+  },
+]
+`;
+
+exports[`dir() - should output 3 file 1`] = `
+Array [
+  Object {
+    "content": "file-content-1",
+    "fileName": "some-path/some-file-name-1",
+  },
+  Object {
+    "content": "file-content-2",
+    "fileName": "some-path/some-file-name-2",
+  },
+  Object {
+    "content": "file-content-3",
+    "fileName": "some-path/some-file-name-3",
+  },
+]
+`;
+
+exports[`dir() - should output 3 files with extentions 1`] = `
+Array [
+  Object {
+    "content": "file-content-4",
+    "fileName": "some-path/some-file-name-4.json",
+  },
+  Object {
+    "content": "file-content-5",
+    "fileName": "some-path/some-file-name-5.css",
+  },
+  Object {
+    "content": "file-content-6",
+    "fileName": "some-path/some-file-name-6.js",
+  },
+]
+`;
