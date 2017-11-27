@@ -264,7 +264,7 @@ test('dir() - should output 3 file', async () => {
     expect(files).toMatchSnapshot();
 });
 
-test('dir() - should output 3 files with extentions', async () => {
+test('dir() - should output 3 files with extensions', async () => {
     expect.assertions(1);
     const sink = getValidSink();
 

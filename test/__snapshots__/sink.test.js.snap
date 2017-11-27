@@ -45,7 +45,7 @@ Array [
 ]
 `;
 
-exports[`dir() - should output 3 files with extentions 1`] = `
+exports[`dir() - should output 3 files with extensions 1`] = `
 Array [
   Object {
     "content": "file-content-4",
