@@ -12,7 +12,8 @@ function getValidSink() {
 
 test('constructor() - no value for "options" argument - should throw', () => {
     expect(() => {
-        new SinkGCS(); // eslint-disable-line
+        // eslint-disable-next-line no-new
+        new SinkGCS();
     }).toThrowError('"options" object must be provided');
 });
 
@@ -28,9 +29,9 @@ test('constructor() - no value for "bucket" argument - should throw', () => {
 
 test('constructor() - has value for "options" and "bucket" arguments - should be of Sink Class type', () => {
     expect(
+        // eslint-disable-next-line no-new
         new SinkGCS(
             {
-                // eslint-disable-line
                 projectId: 'asset-pipe',
                 keyFilename: './foo.json',
             },
@@ -43,7 +44,7 @@ test('.writer() - no value for "type" argument - should throw', () => {
     const sink = getValidSink();
     expect(() => {
         sink.writer();
-    }).toThrowError('"type" is missing');
+    }).toThrowError('Expected argument "type" to be provided to writer');
 });
 
 test('.writer() - happy path', async done => {
@@ -111,7 +112,7 @@ test('.set() - should return no value/undefined if success', async () => {
 
     sink.gcs._setState({ save: '' });
 
-    const result = await sink.set('some-file', 'file-content');
+    const result = await sink.set('some-file.json', 'file-content');
 
     expect(result).toBe(undefined);
 });
