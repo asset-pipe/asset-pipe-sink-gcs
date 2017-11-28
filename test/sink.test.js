@@ -47,6 +47,13 @@ test('.writer() - no value for "type" argument - should throw', () => {
     }).toThrowErrorMatchingSnapshot();
 });
 
+test('.writer() - bad extension for "type" argument - should throw', () => {
+    const sink = getValidSink();
+    expect(() => {
+        sink.writer('asdasd.fake');
+    }).toThrowErrorMatchingSnapshot();
+});
+
 test('.writer() - happy path', async done => {
     expect.assertions(2);
     const sink = getValidSink();
@@ -115,6 +122,16 @@ test('.set() - should return no value/undefined if success', async () => {
     const result = await sink.set('some-file.json', 'file-content');
 
     expect(result).toBe(undefined);
+});
+
+test('.set() - should error if file extension cannot be resolved to a mime type', async () => {
+    const sink = getValidSink();
+
+    try {
+        await sink.set('some-file.fake', 'file-content');
+    } catch (err) {
+        expect(err.message).toMatchSnapshot();
+    }
 });
 
 test('.has() - should return true if file exists', async () => {

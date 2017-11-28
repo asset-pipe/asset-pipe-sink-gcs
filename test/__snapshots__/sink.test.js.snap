@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.set() - should error if file extension cannot be resolved to a mime type 1`] = `"Expected file extension for argument \\"fileName\\" to resolve to a valid mime type. Instead extension \\".fake\\" resolved to content type \\"false\\""`;
+
+exports[`.writer() - bad extension for "type" argument - should throw 1`] = `"Expected type \\"asdasd.fake\\" to resolve to a valid mime type, instead got \\"false\\""`;
+
 exports[`.writer() - happy path 1`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c"`;
 
 exports[`.writer() - happy path 2`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c.json"`;
