@@ -44,7 +44,7 @@ test('.writer() - no value for "type" argument - should throw', () => {
     const sink = getValidSink();
     expect(() => {
         sink.writer();
-    }).toThrowError('Expected argument "type" to be provided to writer');
+    }).toThrowErrorMatchingSnapshot();
 });
 
 test('.writer() - happy path', async done => {
