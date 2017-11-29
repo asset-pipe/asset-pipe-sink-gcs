@@ -8,6 +8,10 @@ module.exports = () => {
             return state.getFiles && state.getFiles[prefix];
         },
 
+        async getMetadata() {
+            return {};
+        },
+
         file(fileName) {
             return {
                 name: fileName,
@@ -33,9 +37,6 @@ module.exports = () => {
     return {
         _setState(newState) {
             state = newState;
-        },
-        async createBucket(bucketName) {
-            return getBucket(bucketName);
         },
         bucket(bucketName) {
             return getBucket(bucketName);
