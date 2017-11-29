@@ -58,8 +58,6 @@ test('.writer() - happy path', async done => {
     expect.assertions(2);
     const sink = getValidSink();
 
-    await sink._ready;
-
     const gcsFakeWritestream = new stream.Writable({
         _data: false,
         write(chunk, encoding, next) {
@@ -99,8 +97,6 @@ test('.writer() - happy path', async done => {
 test('.get() - should resolve fileContent when file exist', async () => {
     const sink = getValidSink();
 
-    await sink._ready;
-
     const content = 'some-file-content';
     sink.gcs._setState({
         download: {
@@ -114,8 +110,6 @@ test('.get() - should resolve fileContent when file exist', async () => {
 
 test('.set() - should return no value/undefined if success', async () => {
     const sink = getValidSink();
-
-    await sink._ready;
 
     sink.gcs._setState({ save: '' });
 
@@ -137,8 +131,6 @@ test('.set() - should error if file extension cannot be resolved to a mime type'
 test('.has() - should return true if file exists', async () => {
     const sink = getValidSink();
 
-    await sink._ready;
-
     sink.gcs._setState({ exists: [true] });
 
     const result = await sink.has('some-file');
@@ -148,8 +140,6 @@ test('.has() - should return true if file exists', async () => {
 
 test('.has() - should return false if missing', async () => {
     const sink = getValidSink();
-
-    await sink._ready;
 
     sink.gcs._setState({ exists: [] });
 
@@ -168,8 +158,6 @@ test('dir() - should error when invalid response from getFiles', async () => {
     expect.assertions(1);
     const sink = getValidSink();
 
-    await sink._ready;
-
     sink.gcs._setState({ getFiles: { '/': [] } });
 
     try {
@@ -183,8 +171,6 @@ test('dir() - should error when no files', async () => {
     expect.assertions(1);
     const sink = getValidSink();
 
-    await sink._ready;
-
     sink.gcs._setState({ getFiles: { 'some-dir/': [[]] } });
 
     try {
@@ -197,8 +183,6 @@ test('dir() - should error when no files', async () => {
 test('dir() - should error when no matching files', async () => {
     expect.assertions(1);
     const sink = getValidSink();
-
-    await sink._ready;
 
     sink.gcs._setState({
         getFiles: {
@@ -220,8 +204,6 @@ test('dir() - should output 1 file', async () => {
     expect.assertions(1);
     const sink = getValidSink();
 
-    await sink._ready;
-
     const fileName = 'some-path/some-file-name.json';
     sink.gcs._setState({
         download: { [fileName]: 'file-content' },
@@ -238,8 +220,6 @@ test('dir() - should output 1 file with extra slash', async () => {
     expect.assertions(1);
     const sink = getValidSink();
 
-    await sink._ready;
-
     const fileName = 'some-path/some-file-name.json';
     sink.gcs._setState({
         download: { [fileName]: 'file-content' },
@@ -255,8 +235,6 @@ test('dir() - should output 1 file with extra slash', async () => {
 test('dir() - should output 3 file', async () => {
     expect.assertions(1);
     const sink = getValidSink();
-
-    await sink._ready;
 
     const fileName1 = 'some-path/some-file-name-1';
     const fileName2 = 'some-path/some-file-name-2';
@@ -285,8 +263,6 @@ test('dir() - should output 3 file', async () => {
 test('dir() - should output 3 files with extensions', async () => {
     expect.assertions(1);
     const sink = getValidSink();
-
-    await sink._ready;
 
     const fileName1 = 'some-path/some-file-name-4.json';
     const fileName2 = 'some-path/some-file-name-5.css';
