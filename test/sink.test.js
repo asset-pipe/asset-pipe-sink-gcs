@@ -94,11 +94,13 @@ test('.writer() - happy path', async done => {
     });
 });
 
-test('.get() - should resolve fileContent when file exist', async () => {
+test('.get() - should resolve fileContent when file exists', async () => {
+    expect.hasAssertions();
     const sink = getValidSink();
 
     const content = 'some-file-content';
     sink.gcs._setState({
+        exists: true,
         download: {
             'some-file': content,
         },
@@ -108,17 +110,34 @@ test('.get() - should resolve fileContent when file exist', async () => {
     expect(result).toBe(content);
 });
 
+test('.get() - should reject when file does not exists', async () => {
+    expect.hasAssertions();
+    const sink = getValidSink();
+
+    sink.gcs._setState({
+        exists: false,
+    });
+
+    try {
+        await sink.get('some-file');
+    } catch (err) {
+        expect(JSON.stringify(err, null, 2)).toMatchSnapshot();
+    }
+});
+
 test('.set() - should return no value/undefined if success', async () => {
+    expect.hasAssertions();
     const sink = getValidSink();
 
     sink.gcs._setState({ save: '' });
 
     const result = await sink.set('some-file.json', 'file-content');
 
-    expect(result).toBe(undefined);
+    expect(result).toBe('');
 });
 
 test('.set() - should error if file extension cannot be resolved to a mime type', async () => {
+    expect.hasAssertions();
     const sink = getValidSink();
 
     try {

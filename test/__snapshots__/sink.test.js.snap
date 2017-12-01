@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.get() - should reject when file does not exists 1`] = `
+"{
+  \\"data\\": {
+    \\"file\\": \\"some-file\\"
+  },
+  \\"isBoom\\": true,
+  \\"isServer\\": false,
+  \\"output\\": {
+    \\"statusCode\\": 404,
+    \\"payload\\": {
+      \\"statusCode\\": 404,
+      \\"error\\": \\"Not Found\\",
+      \\"message\\": \\"Unable to find requested file \\\\\\"some-file\\\\\\"\\"
+    },
+    \\"headers\\": {}
+  }
+}"
+`;
+
 exports[`.set() - should error if file extension cannot be resolved to a mime type 1`] = `"Expected file extension for argument \\"fileName\\" to resolve to a valid mime type. Instead extension \\".fake\\" resolved to content type \\"false\\""`;
 
 exports[`.writer() - bad extension for "type" argument - should throw 1`] = `"Expected type \\"asdasd.fake\\" to resolve to a valid mime type, instead got \\"false\\""`;
