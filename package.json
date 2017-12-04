@@ -33,6 +33,7 @@
     "lodash.isobject": "^3.0.2",
     "lodash.isstring": "^4.0.1",
     "mime-types": "^2.1.17",
+    "p-retry": "^1.0.0",
     "readable-stream": "^2.3.3",
     "verror": "^1.10.0"
   },
