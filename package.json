@@ -17,7 +17,8 @@
     "Greenkeeper (http://greenkeeper.io/)",
     "Simen Bekkhus (https://github.com/SimenB)",
     "Sveinung Røsaker (https://github.com/sveisvei)",
-    "Richard Walker (https://github.com/digitalsadhu)"
+    "Richard Walker (https://github.com/digitalsadhu)",
+    "greenkeeper[bot] (http://github.com/apps/greenkeeper)"
   ],
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-gcs/issues"
@@ -39,7 +40,7 @@
     "verror": "^1.10.0"
   },
   "devDependencies": {
-    "commitizen": "^2.9.6",
+    "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.10.0",
     "eslint-config-finn": "^3.0.0",
@@ -47,7 +48,7 @@
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
     "jest": "^22.0.4",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.9.2",
     "projectz": "^1.4.0",
     "semantic-release": "^15.1.3",
