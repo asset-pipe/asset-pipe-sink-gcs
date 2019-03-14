@@ -1,47 +1,38 @@
 'use strict';
 
-module.exports = () => {
-    let state = {};
+module.exports.Storage = class Storage {
+    constructor() {
+        this.state = {};
+    }
 
-    const getBucket = () => ({
-        async getFiles({ prefix }) {
-            return state.getFiles && state.getFiles[prefix];
-        },
+    getBucket() {
+        return {
+            getFiles: async ({ prefix }) =>
+                this.state.getFiles && this.state.getFiles[prefix],
 
-        async getMetadata() {
-            return {};
-        },
+            async getMetadata() {
+                return {};
+            },
 
-        file(fileName) {
-            return {
+            file: fileName => ({
                 name: fileName,
-                createWriteStream() {
-                    return state.createWriteStream;
-                },
-                async save() {
-                    return state.save;
-                },
-                async download() {
-                    return state.download && state.download[fileName];
-                },
-                async exists() {
-                    return state.exists;
-                },
-                async move() {
-                    return state.move;
-                },
-            };
-        },
-    });
+                createWriteStream: () => this.state.createWriteStream,
+                save: async () => this.state.save,
+                download: async () =>
+                    this.state.download && this.state.download[fileName],
+                exists: async () => this.state.exists,
+                move: async () => this.state.move,
+            }),
+        };
+    }
 
-    return {
-        _setState(newState) {
-            state = newState;
-        },
-        bucket(bucketName) {
-            return getBucket(bucketName);
-        },
-    };
+    _setState(newState) {
+        this.state = newState;
+    }
+
+    bucket(bucketName) {
+        return this.getBucket(bucketName);
+    }
 };
 
 module.exports.mustateStore = () => {};
