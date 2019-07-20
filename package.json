@@ -40,7 +40,7 @@
     "verror": "^1.10.0"
   },
   "devDependencies": {
-    "commitizen": "^3.0.7",
+    "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.15.1",
     "eslint-config-finn": "^3.0.1",
